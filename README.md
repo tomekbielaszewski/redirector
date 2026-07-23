@@ -31,6 +31,14 @@ docker build -t redirector .
 docker run -p 8080:8080 redirector    # for when you want to pretend it's production
 ```
 
+```
+services:
+  redirector:
+    image: ghcr.io/tomekbielaszewski/redirector:latest
+    container_name: redirector
+    restart: unless-stopped
+```
+
 The server binds to `:8080`. There's no config, no flags, no frills — just vibes.
 
 ## Deployment
